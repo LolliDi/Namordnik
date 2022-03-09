@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Namordnik
 {
@@ -58,6 +59,15 @@ namespace Namordnik
                     return ""+price;
                 }
                 return "?";
+            }
+        }
+
+        public SolidColorBrush ColorBack
+        {
+            get
+            {
+                if (MinCostForAgent>2000) return new SolidColorBrush(Color.FromArgb(80,255,51,51));
+                else return new SolidColorBrush(Color.FromArgb(90,176, 229, 253));
             }
         }
     }

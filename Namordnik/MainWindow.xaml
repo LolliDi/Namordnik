@@ -37,7 +37,7 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource ListViewBorder}" Background="#99B0E5FD">
+                        <Border Style="{StaticResource ListViewBorder}" Background="{Binding ColorBack}">
                             <StackPanel Orientation="Horizontal">
                                 <Image Style="{StaticResource IconProduct}" Source="{Binding GetIcon}"/>
 
