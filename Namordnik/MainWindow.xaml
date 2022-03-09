@@ -1,0 +1,60 @@
+﻿<Window x:Class="Namordnik.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Namordnik"
+        mc:Ignorable="d" 
+        Title="Намордник" Height="630" Width="800" ResizeMode="NoResize"
+        Icon="Images/Намордник.png">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="33,0,0,0">
+                <TextBox Name="TextBoxSearch" TextChanged="TextBoxSearch_TextChanged"/>
+                <ComboBox Name="ComboBoxFilt" SelectionChanged="ComboBoxSort_SelectionChanged">
+                    <ComboBox.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#99B0E5FD"/>
+                    </ComboBox.Resources>
+                </ComboBox>
+                <ComboBox Name="ComboBoxSort" SelectionChanged="ComboBoxSort_SelectionChanged">
+                    <ComboBox.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#99B0E5FD"/>
+                    </ComboBox.Resources>
+                    <TextBlock Text="По названию ↑"/>
+                    <TextBlock Text="По названию ↓"/>
+                    <TextBlock Text="По номеру цеха ↑"/>
+                    <TextBlock Text="По номеру цеха ↓"/>
+                    <TextBlock Text="По стоимости ↑"/>
+                    <TextBlock Text="По стоимости ↓"/>
+                </ComboBox>
+                
+            </StackPanel>
+            <ListView Name="ViewDB">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource ListViewBorder}" Background="#99B0E5FD">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Style="{StaticResource IconProduct}" Source="{Binding GetIcon}"/>
+
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding GetTypeAndNameProduct}" Style="{StaticResource ListViewText}" Width="500"/>
+                                        <TextBlock Text="{Binding MinCostForAgent,StringFormat={}{0}р}" Style="{StaticResource ListViewText}" Width="80" TextAlignment="Center" />
+                                    </StackPanel>
+                                    <TextBlock Text="{Binding ArticleNumber}" Style="{StaticResource ListViewText}"/>
+                                    <TextBlock Text="{Binding GetMaterials, StringFormat={}Материалы: {0}}" Style="{StaticResource ListViewText}"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
