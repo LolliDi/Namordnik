@@ -93,5 +93,43 @@ namespace Namordnik
                 ViewDB.Items.Add(p);
             }
         }
+
+        private void ViewDB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(ViewDB.SelectedItems.Count>0)
+            {
+                BtnChangePrice.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnChangePrice.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void BtnChangePrice_Click(object sender, RoutedEventArgs e)
+        {
+            
+            List<Product> ppp = new List<Product>();
+            foreach(Product pp in ViewDB.SelectedItems)
+            {
+                ppp.Add(pp);
+            }
+            ChangePriceForAgent window = new ChangePriceForAgent(ppp as List<Product>);
+            window.Owner = this;
+            window.Visibility = Visibility.Visible;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.ShowDialog();
+            ViewDB.Items.Refresh();
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddoOrRedactProduct window = new AddoOrRedactProduct();
+            window.Owner = this;
+            window.Visibility = Visibility.Visible;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.ShowDialog();
+            ViewDB.Items.Refresh();
+        }
     }
 }

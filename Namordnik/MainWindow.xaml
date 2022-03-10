@@ -9,7 +9,7 @@
         Icon="Images/Намордник.png">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" Margin="33,0,0,0">
+            <StackPanel Orientation="Horizontal">
                 <TextBox Name="TextBoxSearch" TextChanged="TextBoxSearch_TextChanged"/>
                 <ComboBox Name="ComboBoxFilt" SelectionChanged="ComboBoxSort_SelectionChanged">
                     <ComboBox.Resources>
@@ -29,7 +29,7 @@
                 </ComboBox>
                 
             </StackPanel>
-            <ListView Name="ViewDB">
+            <ListView Name="ViewDB" SelectionChanged="ViewDB_SelectionChanged">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel HorizontalAlignment="Center"/>
@@ -39,9 +39,9 @@
                     <DataTemplate>
                         <Border Style="{StaticResource ListViewBorder}" Background="{Binding ColorBack}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Style="{StaticResource IconProduct}" Source="{Binding GetIcon}"/>
+                                <Image Name="IconProduct" Uid="{Binding ID}" Style="{StaticResource IconProduct}" Source="{Binding GetIcon}"/>
 
-                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="{Binding GetTypeAndNameProduct}" Style="{StaticResource ListViewText}" Width="500"/>
                                         <TextBlock Text="{Binding MinCostForAgent,StringFormat={}{0}р}" Style="{StaticResource ListViewText}" Width="80" TextAlignment="Center" />
@@ -55,6 +55,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Name="BtnChangePrice" Visibility="Collapsed" Click="BtnChangePrice_Click">
+                <TextBlock>Изменить стоимость на...</TextBlock>
+            </Button>
+            <Button Name="BtnAdd" Width="100" Click="BtnAdd_Click">
+                <TextBlock>Добавить</TextBlock>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

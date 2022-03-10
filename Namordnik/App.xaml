@@ -6,11 +6,12 @@
     <Application.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Tw Cen MT"/>
+            <Setter Property="FontSize" Value="17"/>
         </Style>
         <Style TargetType="TextBlock" x:Key="ListViewText">
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="Width" Value="590"/>
-            <Setter Property="FontSize" Value="17"/>
+            
         </Style>
         <Style TargetType="Border" x:Key="ListViewBorder">
             <Setter Property="BorderBrush" Value="#FDBD40"/>
@@ -21,7 +22,8 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-            <Setter Property="Height" Value="500"/>
+            <Setter Property="Height" Value="460"/>
+            <Setter Property="SelectionMode" Value="Multiple"/>
         </Style>
         <Style TargetType="Image" x:Key="IconProduct">
             <Setter Property="Width" Value="100"/>
@@ -30,7 +32,7 @@
             <Setter Property="Margin" Value="5"/>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Width" Value="350"/>
+            <Setter Property="Width" Value="360"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="Background" Value="#99B0E5FD"/>
             <Setter Property="BorderBrush" Value="#FDBD40"/>
@@ -40,13 +42,25 @@
         </Style>
         <Style TargetType="ComboBox">
             <Setter Property="Margin" Value="20,20,0,20"/>
-            <Setter Property="Width" Value="155"/>
+            <Setter Property="Width" Value="160"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="VerticalContentAlignment" Value="center"/>
             <Setter Property="HorizontalContentAlignment" Value="center"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="BorderThickness" Value="1"/>
-
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FDBD40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="210"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="BorderBrush" Value="#B0E5FD"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="0,10"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </Application.Resources>
 </Application>

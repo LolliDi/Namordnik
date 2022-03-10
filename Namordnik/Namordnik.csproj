@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddoOrRedactProduct.xaml.cs">
+      <DependentUpon>AddoOrRedactProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Agent.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
@@ -72,6 +75,9 @@
     </Compile>
     <Compile Include="AgentType.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePriceForAgent.xaml.cs">
+      <DependentUpon>ChangePriceForAgent.xaml</DependentUpon>
     </Compile>
     <Compile Include="db.cs" />
     <Compile Include="dbModel.cs">
@@ -113,6 +119,14 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
+    <Page Include="AddoOrRedactProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangePriceForAgent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
