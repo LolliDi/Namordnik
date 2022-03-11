@@ -693,7 +693,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductMaterial_Material">
-          <End Type="Model.Material" Role="Material" Multiplicity="1" />
+          <End Type="Model.Material" Role="Material" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="Model.ProductMaterial" Role="ProductMaterial" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Material">
@@ -717,7 +719,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductCostHistory_Product">
-          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Product" Role="Product" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="Model.ProductCostHistory" Role="ProductCostHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -729,7 +733,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductMaterial_Product">
-          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Product" Role="Product" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="Model.ProductMaterial" Role="ProductMaterial" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -741,7 +747,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductSale_Product">
-          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Product" Role="Product" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="Model.ProductSale" Role="ProductSale" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">

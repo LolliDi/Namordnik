@@ -104,6 +104,14 @@ namespace Namordnik
             {
                 BtnChangePrice.Visibility = Visibility.Collapsed;
             }
+            if(ViewDB.SelectedItems.Count==1)
+            {
+                BtnChange.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnChange.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void BtnChangePrice_Click(object sender, RoutedEventArgs e)
@@ -129,7 +137,18 @@ namespace Namordnik
             window.Visibility = Visibility.Visible;
             window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             window.ShowDialog();
-            ViewDB.Items.Refresh();
+            Filt();
+        }
+
+        private void BtnChange_Click(object sender, RoutedEventArgs e)
+        {
+            Product p = (Product)ViewDB.SelectedItem;
+            AddoOrRedactProduct window = new AddoOrRedactProduct(p);
+            window.Owner = this;
+            window.Visibility = Visibility.Visible;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.ShowDialog();
+            Filt();
         }
     }
 }

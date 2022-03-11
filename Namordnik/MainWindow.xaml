@@ -43,7 +43,7 @@
 
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding GetTypeAndNameProduct}" Style="{StaticResource ListViewText}" Width="500"/>
+                                        <TextBlock Text="{Binding GetTypeAndNameProduct}" Style="{StaticResource ListViewText}" Width="500" Margin="-10,0,0,0"/>
                                         <TextBlock Text="{Binding MinCostForAgent,StringFormat={}{0}р}" Style="{StaticResource ListViewText}" Width="80" TextAlignment="Center" />
                                     </StackPanel>
                                     <TextBlock Text="{Binding ArticleNumber}" Style="{StaticResource ListViewText}"/>
@@ -55,12 +55,17 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Name="BtnChangePrice" Visibility="Collapsed" Click="BtnChangePrice_Click">
-                <TextBlock>Изменить стоимость на...</TextBlock>
-            </Button>
-            <Button Name="BtnAdd" Width="100" Click="BtnAdd_Click">
-                <TextBlock>Добавить</TextBlock>
-            </Button>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="BtnChangePrice" Visibility="Collapsed" Click="BtnChangePrice_Click">
+                    <TextBlock>Изменить стоимость на...</TextBlock>
+                </Button>
+                <Button Name="BtnAdd" Width="100" Click="BtnAdd_Click">
+                    <TextBlock>Добавить</TextBlock>
+                </Button>
+                <Button Name="BtnChange" Visibility="Collapsed" Width="100" Click="BtnChange_Click">
+                    <TextBlock>Изменить</TextBlock>
+                </Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
