@@ -94,6 +94,7 @@
     <Compile Include="MaterialType.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PageChange.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>

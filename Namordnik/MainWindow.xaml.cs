@@ -20,7 +20,8 @@ namespace Namordnik
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Product> DB;
+        List<Product> DB = db.dbcon.Product.ToList();
+        PageChange pc = new PageChange(db.dbcon.Product.ToList().Count);
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Namordnik
             }
             ComboBoxFilt.SelectedIndex = 0;
             ComboBoxSort.SelectedIndex = 0;
+            DataContext = pc;
         }
 
         private void TextBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -87,10 +89,14 @@ namespace Namordnik
                     DB = DB.OrderByDescending(x => x.MinCostForAgent).ToList();
                     break;
             }
-
-            foreach (Product p in DB)
+            pc.CurrentPage = 1;
+            pc.CountInList = DB.Count;
+            for (int i = (pc.CurrentPage - 1) * 20; i < pc.CurrentPage * 20; i++)
             {
-                ViewDB.Items.Add(p);
+                if (DB.Count > i)
+                {
+                    ViewDB.Items.Add(DB[i]);
+                }
             }
         }
 
@@ -149,6 +155,31 @@ namespace Namordnik
             window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             window.ShowDialog();
             Filt();
+        }
+
+        private void GoPage_Click(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock tb = sender as TextBlock;
+            switch (tb.Uid)
+            {
+                case "Prev":
+                    pc.CurrentPage--;
+                    break;
+                case "Next":
+                    pc.CurrentPage++;
+                    break;
+                default:
+                    pc.CurrentPage = Convert.ToInt32(tb.Text);
+                    break;
+            }
+            ViewDB.Items.Clear();
+            for(int i = (pc.CurrentPage-1)*20; i<pc.CurrentPage*20;i++)
+            {
+                if (DB.Count > i)
+                {
+                    ViewDB.Items.Add(DB[i]);
+                }
+            }
         }
     }
 }
