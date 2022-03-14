@@ -8,6 +8,8 @@ namespace Namordnik
         public int[] numPage { get; set; } = new int[4]; //отображаемые номера 
         public string[] visible { get; set; } = new string[4]; //видимость текстблоков с номерами
         public string[] bold { get; set; } = new string[4]; //толщина
+        public string[] decor { get; set; } = new string[4];//линия внизу
+
         int countPages;
         int countRowOnPage=20; //количество записей
         int countInList; //Всего записей
@@ -80,10 +82,12 @@ namespace Namordnik
                         if (numPage[i] == CurrentPage)
                         {
                             bold[i] = "ExtraBold";
+                            decor[i] = "Underline";
                         }
                         else
                         {
                             bold[i] = "Regular";
+                            decor[i] = "None";
                         }
                     }
                     CountPages = CountPages;
@@ -91,6 +95,7 @@ namespace Namordnik
                 OnPropertyChanged("numPage");
                 OnPropertyChanged("visible");
                 OnPropertyChanged("bold");
+                OnPropertyChanged("decor");
             }
         }
 

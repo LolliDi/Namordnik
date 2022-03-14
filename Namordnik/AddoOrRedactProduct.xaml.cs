@@ -334,8 +334,14 @@ namespace Namordnik
         {
             if(_isChange)
             {
-                db.dbcon.Product.Remove(p);
-                db.dbcon.SaveChanges();
+
+                MessageBoxResult res = MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "Подтвердите действие", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (res == MessageBoxResult.Yes)
+                {
+                    db.dbcon.Product.Remove(p);
+                    db.dbcon.SaveChanges();
+                    Close();
+                }
             }
 
         }

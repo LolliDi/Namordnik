@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Namordnik"
         mc:Ignorable="d" 
-        Title="Намордник" Height="630" Width="800" ResizeMode="NoResize"
+        Title="Намордник" Height="650" Width="800" ResizeMode="NoResize"
         Icon="Images/Намордник.png">
     <Grid>
         <StackPanel Orientation="Vertical">
@@ -55,12 +55,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Name="TBPreview" Uid="Prev" Text="&lt;" MouseDown="GoPage_Click"/>
-                <TextBlock Name="TBPage1" Uid="1" Text="{Binding Path=numPage[0]}" Visibility="{Binding visible[0]}" FontWeight="{Binding bold[0]}" MouseDown="GoPage_Click"/>
-                <TextBlock Name="TBPage2" Uid="2" Text="{Binding Path=numPage[1]}" Visibility="{Binding visible[1]}" FontWeight="{Binding bold[1]}" MouseDown="GoPage_Click"/>
-                <TextBlock Name="TBPage3" Uid="3" Text="{Binding Path=numPage[2]}" Visibility="{Binding visible[2]}" FontWeight="{Binding bold[2]}" MouseDown="GoPage_Click"/>
-                <TextBlock Name="TBPage4" Uid="4" Text="{Binding Path=numPage[3]}" Visibility="{Binding visible[3]}" FontWeight="{Binding bold[3]}" MouseDown="GoPage_Click"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Name="TBPreview" Uid="Prev" Text="&lt;" MouseDown="GoPage_Click" />
+                <TextBlock Name="TBPage1" Uid="1" Text="{Binding Path=numPage[0]}" Margin="5,0" Visibility="{Binding visible[0]}" FontWeight="{Binding bold[0]}" TextDecorations="{Binding decor[0]}"  MouseDown="GoPage_Click"/>
+                <TextBlock Name="TBPage2" Uid="2" Text="{Binding Path=numPage[1]}" Margin="5,0" Visibility="{Binding visible[1]}" FontWeight="{Binding bold[1]}"  TextDecorations="{Binding decor[1]}" MouseDown="GoPage_Click"/>
+                <TextBlock Name="TBPage3" Uid="3" Text="{Binding Path=numPage[2]}" Margin="5,0" Visibility="{Binding visible[2]}" FontWeight="{Binding bold[2]}"  TextDecorations="{Binding decor[2]}" MouseDown="GoPage_Click"/>
+                <TextBlock Name="TBPage4" Uid="4" Text="{Binding Path=numPage[3]}" Margin="5,0" Visibility="{Binding visible[3]}" FontWeight="{Binding bold[3]}"  TextDecorations="{Binding decor[3]}" MouseDown="GoPage_Click"/>
                 <TextBlock Name="TBNext" Uid="Next" Text="&gt;" MouseDown="GoPage_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
