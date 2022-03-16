@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Namordnik"
         mc:Ignorable="d" 
-        Title="Намордник" Height="650" Width="800" ResizeMode="NoResize"
+        Title="Намордник" Height="700" Width="800" ResizeMode="NoResize"
         Icon="Images/Намордник.png">
     <Grid>
         <StackPanel Orientation="Vertical">
@@ -67,11 +67,24 @@
                 <Button Name="BtnChangePrice" Visibility="Collapsed" Click="BtnChangePrice_Click">
                     <TextBlock>Изменить стоимость на...</TextBlock>
                 </Button>
+                
                 <Button Name="BtnAdd" Width="100" Click="BtnAdd_Click">
                     <TextBlock>Добавить</TextBlock>
                 </Button>
+                
                 <Button Name="BtnChange" Visibility="Collapsed" Width="100" Click="BtnChange_Click">
                     <TextBlock>Изменить</TextBlock>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="BtnReportMaterials" Width="165" Click="BtnReportMaterials_Click">
+                    <TextBlock>Отчет c материалами</TextBlock>
+                </Button>
+                <Button Name="BtnReport" Width="100" Click="BtnReport_Click">
+                    <TextBlock>Отчет</TextBlock>
+                </Button>
+                <Button Name="BtnReportMaterialsInfo" Width="200" Click="BtnReportMaterialsInfo_Click">
+                    <TextBlock>Отчет о всех материалах</TextBlock>
                 </Button>
             </StackPanel>
         </StackPanel>

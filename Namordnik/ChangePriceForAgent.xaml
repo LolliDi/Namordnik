@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Namordnik"
         mc:Ignorable="d"
-        Title="ChangePriceForAgent" Height="200" Width="300" ResizeMode="NoResize">
+        Title="Изменить цену на..." Height="200" Width="300" ResizeMode="NoResize"
+        Icon="Images/Намордник.png">
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBox Name="TextBlockNewPrice" Width="200" TextChanged="TextBlockNewPrice_TextChanged"/>

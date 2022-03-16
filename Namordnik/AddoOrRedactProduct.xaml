@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Namordnik"
         mc:Ignorable="d"
-        Title="AddoOrRedactProduct" Height="650" Width="800" ResizeMode="NoResize">
+        Title="Добавление/Редактирование данных" Height="650" Width="800" ResizeMode="NoResize"
+        Icon="Images\Намордник.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10">
             <StackPanel Orientation="Horizontal">
@@ -45,7 +46,11 @@
             <StackPanel Orientation="Horizontal">
                 <TextBox Name="TextBoxMaterials" Height="130" TextWrapping="Wrap" IsReadOnly="True"/>
                 <StackPanel Orientation="Vertical">
-                    <ComboBox Name="ComboBoxMaterials" VerticalAlignment="Top" IsEditable="True" Width="300" SelectionChanged="ComboBoxMaterials_SelectionChanged"/>
+                    <ComboBox Name="ComboBoxMaterials" VerticalAlignment="Top" IsEditable="True" Width="300" SelectionChanged="ComboBoxMaterials_SelectionChanged">
+                        <ComboBox.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#99B0E5FD"/>
+                        </ComboBox.Resources>
+                    </ComboBox>
                     <StackPanel Orientation="Horizontal" Margin="70,0,0,0">
                         <TextBlock VerticalAlignment="Center" >Количество:</TextBlock>
                         <TextBox Name="TextBoxCount" Margin="10,0,2,0" Width="100" TextChanged="TextBoxCount_TextChanged"/>

@@ -75,7 +75,7 @@ namespace Namordnik
                     for (int i = 0; i < 4; i++)
                     {
                         if ((CurrentPage > 3 )&&currentPage>cur) numPage[i]++;
-                        if (CurrentPage < num1||num4>=CountPages) numPage[i]--;
+                        if (num1>1&&(CurrentPage < num1||num4>=CountPages)) numPage[i]--;
                     }
                     for (int i = 0; i < 4; i++)
                     {
